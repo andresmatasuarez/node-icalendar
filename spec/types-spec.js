@@ -103,4 +103,11 @@ describe('iCalendar type formatters and parsers', function() {
             .toEqual({FREQ: 'YEARLY', BYMONTH: '11', BYDAY: '1SU'});
     });
 
+    it('value DATE-TIME formatter with TZ', function() {
+      var date = Date.UTC(2015,4,9,21,00,00);
+      expect(icalendar.format_value('DATE-TIME', date, {TZID: 'Europe/Madrid'})).toEqual('20150509T230000'); //+2
+      expect(icalendar.format_value('DATE-TIME', date, {TZID: 'America/Los_Angeles'})).toEqual('20150509T140000'); //-7
+
+    });
+
 });

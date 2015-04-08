@@ -20,7 +20,10 @@
     "type": "git",
     "url": "git://github.com/tritech/node-icalendar.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "moment": "^2.10.0",
+    "moment-timezone": "^0.3.1"
+  },
   "engines": {
     "node": "*"
   },
