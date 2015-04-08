@@ -89,7 +89,7 @@ describe("iCalendar.parse", function() {
 
     it('parses large collections', function() {
         var cal = parse_calendar(
-                fs.readFileSync(__dirname+'/icalendar-test.ics', 'utf8'));
+                fs.readFileSync(__dirname+'/icss/icalendar-test.ics', 'utf8'));
 
         assert.equal('-//Google Inc//Google Calendar 70.9054//EN',
                     cal.getPropertyValue('PRODID'));
@@ -112,7 +112,7 @@ describe("iCalendar.parse", function() {
     it('parses data from evolution', function() {
         // Evolution doesn't seem to provide very consistent line endings
         var cal = parse_calendar(
-                fs.readFileSync(__dirname+'/evolution.ics', 'utf8'));
+                fs.readFileSync(__dirname+'/icss/evolution.ics', 'utf8'));
     });
 
     it('parsing', function() {
@@ -142,7 +142,7 @@ describe("iCalendar.parse", function() {
 
     it('parse torture test', function() {
         var cal = parse_calendar(
-                fs.readFileSync(__dirname+'/icalendar-test.ics', 'utf8'));
+                fs.readFileSync(__dirname+'/icss/icalendar-test.ics', 'utf8'));
 
         assert.equal('-//Google Inc//Google Calendar 70.9054//EN',
                     cal.getPropertyValue('PRODID'));
@@ -265,7 +265,7 @@ describe("iCalendar.parse", function() {
     });
 
     it('parses VALARMS correctly', function () {
-        var cal = parse_calendar(fs.readFileSync(__dirname + '/valarm-spec.ics', 'utf8'));
+        var cal = parse_calendar(fs.readFileSync(__dirname + '/icss/valarm-spec.ics', 'utf8'));
 
         var event = cal.getComponents('VEVENT')[0];
         var alarm = event.getComponents('VALARM')[0];
@@ -280,4 +280,3 @@ describe("iCalendar.parse", function() {
     });
 
 });
-
